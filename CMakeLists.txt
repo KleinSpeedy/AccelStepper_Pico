@@ -10,9 +10,10 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS 1)
 pico_sdk_init()
 
 add_library(${PROJECT_NAME}
-    src/AccelStepper.cpp)
+    src/AccelStepper.cpp
+)
 
-target_link_libraries(${PROJECT_NAME} pico_stdlib)
-target_include_directories(${PROJECT_NAME} PRIVATE 
-    ${CMAKE_SOURCE_DIR}/include
-    ${CMAKE_BINARY_DIR})
+target_link_libraries(${PROJECT_NAME} PUBLIC pico_stdlib)
+target_include_directories(${PROJECT_NAME} PUBLIC
+    ${CMAKE_CURRENT_SOURCE_DIR}/include
+)
