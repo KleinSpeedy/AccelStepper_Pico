@@ -21,7 +21,7 @@ inline void digitalWrite(uint pin, int value) {
 }
 
 inline unsigned long micros() {
-    return to_ms_since_boot(get_absolute_time());
+    return to_us_since_boot(get_absolute_time());
 }
 
 inline void delay(unsigned long ms) {
